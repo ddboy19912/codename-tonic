@@ -262,7 +262,7 @@ const About = () => {
         </div>
       </section>
 
-      <footer className="px-20 flex flex-col-reverse mt-24 md:mt-0 md:flex-row items-center md:justify-between min-h-screen md:h-[25rem] gap-12 mb-12 md:mb-0">
+      <footer className="px-20 flex flex-col-reverse mt-24 md:mt-0 md:flex-row items-center md:justify-between min-h-screen md:min-h-fit md:h-[25rem] gap-12 mb-12 md:mb-0">
         <div className="flex flex-col md:justify-center gap-6 md:gap-12 md:h-full">
           <img className="w-36" src={logoBlack} alt="" />
           <p className="hidden md:block text-neutral-400">

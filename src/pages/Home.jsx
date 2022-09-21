@@ -10,6 +10,7 @@ import {
 } from "@material-ui/icons";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import { Link } from "react-scroll";
 
 //  Images Import
 
@@ -30,7 +31,6 @@ import tickIcon from "../images/tickImg.png";
 
 const Home = () => {
   // Hooks
-
   const [showExtra, setShowExtra] = useState(false);
   const [showExtra2, setShowExtra2] = useState(false);
 
@@ -39,32 +39,48 @@ const Home = () => {
   }, []);
 
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col overflow-x-hidden">
       <section
         style={{ background: "#0A2640" }}
         className="px-20 h-screen gap-8 flex flex-col relative"
       >
-        {/* <div className="w-96 h-96 absolute bg-red-400 rounded-full bottom-96 right-0 scale-150 -z-0"></div> */}
         <div className="flex mt-8 justify-between gap-10">
           <div className="flex flex-col gap-5 justify-center">
-            <h2 className="text-white text-5xl leading-tight font-manrope">
+            <h2 className="text-white text-5xl text-center md:text-left leading-tight font-manrope">
               Save time by building <br /> fast with Boldo Template
             </h2>
-            <p className="text-white text-base">
+            <p className=" hidden md:block text-white text-base">
               Funding handshake buyer business-to-business metrics iPad
               partnership. <br /> First mover advantage innovator success
               deployment non-disclosure.
             </p>
-            <div className="flex gap-5 mt-3">
-              <button className="inline-block px-6 py-2 bg-emerald-300 text-slate-800 font-bold leading-tight rounded-full hover:bg-transparent hover:border-2 hover:border-emerald-300 hover:text-emerald-300 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-56 h-12">
-                Buy Template
-              </button>
-              <button className="inline-block px-6 py-2 border-2 border-white text-white font-bold leading-tight rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out h-12 w-48">
-                Explore
-              </button>
+
+            <div className="flex justify-center md:justify-start mt-10 gap-5 md:mt-3">
+              <Link
+                to="newsletter"
+                spy={true}
+                smooth={true}
+                offset={-30}
+                duration={500}
+              >
+                <button className="inline-block px-6 py-2 bg-emerald-300 text-slate-800 font-bold leading-tight rounded-full hover:bg-transparent hover:border-2 hover:border-emerald-300 hover:text-emerald-300 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-56 h-12">
+                  Buy Template
+                </button>
+              </Link>
+              <Link
+                to="blog"
+                spy={true}
+                smooth={true}
+                offset={-30}
+                duration={500}
+              >
+                <button className="hidden md:inline-block px-6 py-2 border-2 border-white text-white font-bold leading-tight rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out h-12 w-48">
+                  Explore
+                </button>
+              </Link>
             </div>
           </div>
-          <div className="w-5/12">
+          <div className="w-5/12 hidden lg:block">
             <motion.img
               whileHover={{ scale: 1.1 }}
               initial={{ scale: 0 }}
@@ -76,7 +92,7 @@ const Home = () => {
             />
           </div>
         </div>
-        <div className="flex items-center gap-2 mt-16">
+        <div className="flex items-center justify-items-stretch ml-5 gap-2 mt-16 scale-125 md:scale-100">
           <div>
             <img className="w-4/6" src={logoWhite} alt="" />
           </div>
@@ -99,20 +115,19 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="px-20 gap-4 flex flex-col items-center mt-12 mx-auto">
+      <section
+        className="px-20 gap-4 flex flex-col items-center justify-center mt-12 mx-auto overflow-x-hidden"
+        id="services"
+      >
         <p className="text-neutral-600 text-xl">Our Services</p>
-        <h2 className="font-manrope font-medium text-5xl text-center mt-6">
+        <h2 className="font-manrope font-medium text-4xl md:text-5xl text-center mt-6">
           Handshake infographic mass market <br /> crowdfunding iteration.
         </h2>
         <motion.div
           data-aos="fade-up"
-          // ref={ref}
-          // variants={scrollVariant}
-          // initial="hidden"
-          // animate={control}
-          className="grid grid-cols-3 gap-20 mt-20"
+          className="grid grid-rows-3 md:grid-rows-1  md:grid-cols-3 gap-24 md:gap-44 mt-20"
         >
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 justify-center items-center">
             <img className="w-64" src={img1} alt="" />
             <p className="text-xl font-normal">Cool feature title</p>
             <p className="text-neutral-500 font-normal">
@@ -125,7 +140,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 justify-center items-center">
             <img className="w-64" src={img2} alt="" />
             <p className="text-xl font-normal">Even cooler feature</p>
             <p className="text-neutral-500 font-normal">
@@ -138,7 +153,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 justify-center items-center">
             <img className="w-64" src={img3} alt="" />
             <p className="text-xl font-normal">Cool feature title</p>
             <p className="text-neutral-500 font-normal">
@@ -152,11 +167,19 @@ const Home = () => {
             </div>
           </div>
         </motion.div>
-        <motion.div data-aos="fade-left" className="mt-20 flex gap-32">
+        <motion.div
+          data-aos="fade-left"
+          className="md:mt-44 sm:mt-24 flex flex-col md:flex-row justify-center gap-32 items-center"
+        >
           <div>
-            <img style={{ width: "60rem" }} src={imageCombine} alt="" />
+            <img
+              className="hidden sm:block"
+              style={{ width: "60rem" }}
+              src={imageCombine}
+              alt=""
+            />
           </div>
-          <div className="flex flex-col gap-10">
+          <div className="flex sm:-mt-24 flex-col gap-10">
             <div>
               <h3 className="font-manrope text-4xl">
                 We connect our customers with the best, and help them keep
@@ -177,7 +200,7 @@ const Home = () => {
                 Business-to-consumer long tail.
               </span>
             </div>
-            <div>
+            <div className="flex justify-center md:justify-start">
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -189,7 +212,10 @@ const Home = () => {
           </div>
         </motion.div>
 
-        <div data-aos="fade-right" className="mt-20 flex gap-32">
+        <div
+          data-aos="fade-right"
+          className=" mt-20 flex flex-col md:flex-row  gap-32"
+        >
           <div className="flex flex-col gap-10">
             <div>
               <h3 className="font-manrope text-4xl">
@@ -200,32 +226,38 @@ const Home = () => {
             <div className="flex flex-col gap-7">
               <span className="w-11/12 h-16 rounded-md bg-slate-800 shadow-xl flex items-center gap-3 px-8">
                 <Feather style={{ color: "white" }} />
-                <p className="text-white">
+                <p className="text-white text-sm w-auto">
                   We connect our customers with the best.
                 </p>
               </span>
               <span className="w-11/12 h-16 rounded-md bg-white shadow-xl flex items-center gap-3 px-8">
                 <VisibilityOutlined />
-                <p className="text-slate-800 font-semibold">
+                <p className="text-slate-800 text-sm font-semibold">
                   Advisor success customer launch party.
                 </p>
               </span>
               <span className="w-11/12 h-16 rounded-md bg-white shadow-xl flex items-center gap-3 px-8">
                 <WbSunnyOutlined />
-                <p className="text-slate-800 font-semibold">
+                <p className="text-slate-800 text-sm font-semibold">
                   Business-to-consumer long tail.
                 </p>
               </span>
             </div>
           </div>
           <div>
-            <img style={{ width: "60rem" }} src={imageCombine2} alt="" />
+            <img
+              className="hidden md:block"
+              style={{ width: "60rem" }}
+              src={imageCombine2}
+              alt=""
+            />
           </div>
         </div>
       </section>
+
       <section
         style={{ background: "#0A2640", paddingTop: "3rem" }}
-        className="px-20 min-h-screen gap-8 flex flex-col mt-24"
+        className="hidden px-20 min-h-screen gap-8 lg:flex flex-col mt-24"
       >
         <div className="py-10 flex flex-col">
           <h2 className="font-manrope text-4xl leading-snug text-white">
@@ -305,15 +337,16 @@ const Home = () => {
           </div>
         </div>
       </section>
+
       <section
         style={{ height: "40rem" }}
-        className="px-20 gap-4 flex flex-col items-center mt-12 mx-auto"
+        className="px-20 gap-4 flex flex-col items-center -mt-28 md:mt-12 mx-auto"
       >
-        <div className="flex flex-col mt-20">
-          <img src={img7} alt="" />
-          <div className="flex justify-between mt-20">
+        <div className="flex flex-col md:mt-20">
+          <img className="hidden lg:flex" src={img7} alt="" />
+          <div className="flex flex-col md:flex-row gap-10 justify-between mt-20">
             <div>
-              <h2 className="font-manrope text-3xl">
+              <h2 className="font-manrope text-4xl md:text-3xl">
                 We connect our customers <br /> with the best, and help them
                 <br />
                 keep up-and stay open.
@@ -330,7 +363,7 @@ const Home = () => {
                     <img className="w-4 h-4" src={caretDown} alt="" />
                   </div>
                   {showExtra && (
-                    <p className="h-44 w-96 -mt-12 -mb-16 text-neutral-400">
+                    <p className="h-52 w-80 md:h-44 md:w-96 -mt-12 -mb-16 text-neutral-400">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Explicabo ipsa sapiente repellendus accusantium velit
                       saepe dolore, distinctio maxime quo soluta optio
@@ -348,12 +381,10 @@ const Home = () => {
                     <img className="w-4 h-4" src={caretDown} alt="" />
                   </div>
                   {showExtra2 && (
-                    <p className="h-44 w-96 -mt-12 -mb-16 text-neutral-400">
+                    <p className="h-40 w-80 md:h-44 md:w-96 -mt-12 -mb-16 text-neutral-400">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                       Explicabo ipsa sapiente repellendus accusantium velit
-                      saepe dolore, distinctio maxime quo soluta optio
-                      accusamus, odio labore. Et harum nesciunt consectetur ab
-                      quisquam?
+                      saepe dolore.
                     </p>
                   )}
                 </span>
@@ -362,13 +393,17 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section className="px-20 gap-4 flex flex-col items-center mt-72 mx-auto">
+
+      <section
+        className="px-10 scale-90 md:scale-100 md:px-20 gap-4 flex flex-col items-center mt-44 md:mt-0 lg:mt-72 mx-auto w-auto"
+        id="blog"
+      >
         <p className="text-neutral-600 text-xl">Our Blog</p>
         <h2 className="font-manrope font-medium text-5xl text-center mt-6">
           Value proposition accelerator product <br /> management venture
         </h2>
-        <div className="grid grid-cols-3 gap-10 mt-20">
-          <div data-aos="flip-up" className="flex flex-col gap-4">
+        <div className="grid grid-rows-3 md:grid-rows-1 md:grid-cols-3 gap-10 mt-20">
+          <div data-aos="fade-in" className="flex flex-col gap-4">
             <img
               className="w-full h-64 object-cover rounded-xl"
               src={img1}
@@ -400,7 +435,7 @@ const Home = () => {
             </div>
           </div>
           <div
-            data-aos="flip-up"
+            data-aos="fade-in"
             data-aos-delay="500"
             className="flex flex-col gap-4"
           >
@@ -436,7 +471,7 @@ const Home = () => {
             </div>
           </div>
           <div
-            data-aos="flip-up"
+            data-aos="fade-in"
             data-aos-delay="1000"
             className="flex flex-col gap-4"
           >
@@ -472,11 +507,15 @@ const Home = () => {
             </div>
           </div>
         </div>
-        <button className="inline-block px-6 py-2 border-2 border-slate-800 text-slate-800 font-bold leading-tight rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out h-12 w-48 mt-20">
+        <button className="inline-block px-6 py-2 border-2 border-slate-800 text-slate-800 font-bold leading-tight rounded-full hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out h-12 w-48 mt-10 md:mt-20">
           Load More
         </button>
       </section>
-      <section className="px-20 w-full gap-4 flex flex-col items-center mt-28 mx-auto">
+
+      <section
+        className="hidden px-20 w-full gap-4 lg:flex flex-col items-center mt-28 mx-auto"
+        id="newsletter"
+      >
         <div
           style={{ backgroundColor: "#0A2640" }}
           className="w-full h-80 rounded-xl"
@@ -500,16 +539,17 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <footer className="px-20 flex items-center justify-between min-h-screen">
-        <div className="flex flex-col gap-10">
+
+      <footer className="px-20 flex flex-col-reverse mt-24 md:mt-0 md:flex-row items-center md:justify-between min-h-screen md:min-h-fit md:h-[25rem] gap-12 mb-12 md:mb-0">
+        <div className="flex flex-col md:justify-center gap-6 md:gap-12 md:h-full">
           <img className="w-36" src={logoBlack} alt="" />
-          <p className="text-neutral-400">
+          <p className="hidden md:block text-neutral-400">
             Social media validation business model <br /> canvas graphical user
             interface launch <br /> party creative facebook iPad twitter.
           </p>
           <p className="text-neutral-400">All rights reserved.</p>
         </div>
-        <div className="grid grid-cols-3 gap-40">
+        <div className="flex flex-col text-center justify-start md:justify-center md:items-center md:grid md:grid-cols-3 gap-10 md:h-full">
           <div className="flex flex-col gap-10">
             <h2 style={{ color: "#000000" }} className="font-bold text-xl">
               Landings

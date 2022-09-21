@@ -22,7 +22,7 @@ const About = () => {
   }, []);
 
   return (
-    <main className="flex flex-col">
+    <main className="flex flex-col overflow-x-hidden">
       <section
         style={{ background: "#0A2640", height: "450px" }}
         className="px-20 gap-4 flex flex-col items-center mx-auto relative"
@@ -31,12 +31,12 @@ const About = () => {
         <h2 className="font-manrope font-medium text-5xl text-center mt-6 text-white">
           We love to make great <br /> things, things that matter.
         </h2>
-        <p className="text-center text-white mt-4">
+        <p className="hidden md:block text-center text-white mt-4">
           Funding handshake buyer business-to-business metrics iPad partnership.
           First mover advantage <br /> innovator success deployment
           non-disclosure.
         </p>
-        <div className="grid grid-cols-3 gap-5 justify-center justify-items-center mt-11">
+        <div className="hidden md:grid grid-cols-3 gap-5 justify-center justify-items-center mt-11">
           <div className="flex flex-col gap-10">
             <img data-aos="zoom-in" className="w-72 h-72" src={img4} alt="" />
             <img
@@ -72,15 +72,12 @@ const About = () => {
           </div>
         </div>
       </section>
-      <section
-        style={{ marginTop: "35rem" }}
-        className="px-72 flex flex-col gap-10"
-      >
+      <section className="mt-14 flex flex-col items-center px-10 sm:px-20 gap-10 md:mt-[35rem] md:px-72 ">
         <p className="text-neutral-400 font-medium">Our Story</p>
-        <h1 className="font-manrope text-5xl">
+        <h1 className="font-manrope text-5xl text-center md:text-left">
           Handshake infographic mass market crowdfunding iteration.
         </h1>
-        <p className="text-neutral-400 font-normal text-xl leading-8">
+        <p className="text-neutral-400 font-normal text-xl leading-8 text-center md:text-left">
           Conversion angel investor entrepreneur first mover advantage.
           Handshake infographic mass market crowdfunding iteration. Traction
           stock user experience deployment beta innovator incubator focus. Sales
@@ -97,8 +94,11 @@ const About = () => {
         <h2 className="font-manrope font-medium text-5xl text-center mt-6 text-white">
           Handshake infographic mass market crowdfunding iteration.
         </h2>
-        <div className="grid grid-cols-3 gap-44 mt-20">
-          <div data-aos="fade-in">
+        <div className="grid grid-rows-3 md:grid-rows-1 md:grid-cols-3 gap-36 md:gap-44 mt-20">
+          <div
+            className="flex flex-col md:items-start items-center"
+            data-aos="fade-in"
+          >
             <h1 style={{ color: "#4FE9A4" }} className="text-8xl font-manrope">
               120m
             </h1>
@@ -106,7 +106,11 @@ const About = () => {
               Cool feature title
             </p>
           </div>
-          <div data-aos="fade-in" data-aos-delay="500">
+          <div
+            className="flex flex-col md:items-start items-center"
+            data-aos="fade-in"
+            data-aos-delay="500"
+          >
             <h1 style={{ color: "#4FE9A4" }} className="text-8xl font-manrope">
               10.000
             </h1>
@@ -114,7 +118,11 @@ const About = () => {
               Cool feature title
             </p>
           </div>
-          <div data-aos="fade-in" data-aos-delay="1000">
+          <div
+            className="flex flex-col md:items-start items-center"
+            data-aos="fade-in"
+            data-aos-delay="1000"
+          >
             <h1 style={{ color: "#4FE9A4" }} className="text-8xl font-manrope">
               240
             </h1>
@@ -125,17 +133,19 @@ const About = () => {
         </div>
       </section>
       <section className="flex flex-col gap-10 mt-28">
-        <div className="px-64 flex flex-col gap-10">
+        <div className="px-20 md:px-64 flex flex-col items-center md:items-start gap-10">
           <p className="text-neutral-400 font-medium">Our Team</p>
-          <h1 className="font-manrope text-5xl">The leadership team</h1>
-          <p className="text-neutral-400 font-normal text-xl leading-8">
+          <h1 className="font-manrope text-5xl text-center md:text-left">
+            The leadership team
+          </h1>
+          <p className="text-neutral-400 font-normal text-xl leading-8 text-center md:text-left">
             Conversion angel investor entrepreneur first mover advantage.
             Handshake infographic mass market crowdfunding iteration. Traction
             stock user experience deployment beta innovator incubator focus.
           </p>
         </div>
-        <div className="grid grid-cols-3 justify-between gap-16 px-20">
-          <div className="flex flex-col gap-6">
+        <div className="grid grid-rows-3 md:grid-rows-1 md:grid-cols-3 md:justify-between items-center gap-16 px-20">
+          <div className="flex flex-col gap-6 items-center md:items-start">
             <img src={aboutImg1} alt="" />
             <div className="flex flex-col gap-1">
               <p style={{ color: "#000000" }} className="font-manrope text-2xl">
@@ -145,7 +155,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 items-center md:items-start">
             <img src={aboutImg2} alt="" />
             <div className="flex flex-col gap-1">
               <p style={{ color: "#000000" }} className="font-manrope text-2xl">
@@ -155,7 +165,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-6 items-center md:items-start">
             <img src={aboutImg3} alt="" />
             <div className="flex flex-col gap-1">
               <p style={{ color: "#000000" }} className="font-manrope text-2xl">
@@ -171,18 +181,21 @@ const About = () => {
         style={{ background: "#0A2640" }}
         className="flex flex-col gap-10 mt-28"
       >
-        <div className="px-64 flex flex-col gap-10 py-24">
+        <div className="px-20 md:px-64 flex flex-col items-center md:items-start gap-10 py-24">
           <p className="text-white font-medium ">Our Values</p>
-          <h1 className="font-manrope text-5xl text-white">
+          <h1 className="font-manrope text-5xl text-white text-center md:text-left">
             Things in we believe
           </h1>
-          <p className="text-white font-light text-xl leading-8">
+          <p className="text-white font-light text-xl leading-8 text-center md:text-left">
             Conversion angel investor entrepreneur first mover advantage.
             Handshake infographic mass market crowdfunding iteration. Traction
             stock user experience deployment beta innovator incubator focus.
           </p>
           <div className="flex flex-col gap-16">
-            <div data-aos="fade-left" className="flex gap-12">
+            <div
+              data-aos="fade-left"
+              className="flex flex-col md:flex-row gap-12"
+            >
               <img src={aboutImg4} alt="" />
               <div className="flex flex-col text-white gap-4">
                 <p className="font-manrope text-3xl">We are commited.</p>
@@ -195,7 +208,7 @@ const About = () => {
             <div
               data-aos="fade-right"
               data-aos-delay="500"
-              className="flex gap-12"
+              className="flex gap-12 flex-col md:flex-row"
             >
               <img src={aboutImg5} alt="" />
               <div className="flex flex-col text-white gap-4">
@@ -209,7 +222,7 @@ const About = () => {
             <div
               data-aos="fade-left"
               data-aos-delay="200"
-              className="flex gap-12"
+              className="flex gap-12 flex-col md:flex-row"
             >
               <img src={aboutImg6} alt="" />
               <div className="flex flex-col text-white gap-4">
@@ -224,7 +237,7 @@ const About = () => {
         </div>
       </section>
 
-      <section className="px-20 w-full gap-4 flex flex-col items-center mt-48 mx-auto">
+      <section className="hidden px-20 w-full gap-4 lg:flex flex-col items-center mt-28 mx-auto">
         <div
           style={{ backgroundColor: "#0A2640" }}
           className="w-full h-80 rounded-xl"
@@ -248,16 +261,17 @@ const About = () => {
           </div>
         </div>
       </section>
-      <footer className="px-20 flex items-center justify-between min-h-screen">
-        <div className="flex flex-col gap-10">
+
+      <footer className="px-20 flex flex-col-reverse mt-24 md:mt-0 md:flex-row items-center md:justify-between min-h-screen md:h-[25rem] gap-12 mb-12 md:mb-0">
+        <div className="flex flex-col md:justify-center gap-6 md:gap-12 md:h-full">
           <img className="w-36" src={logoBlack} alt="" />
-          <p className="text-neutral-400">
+          <p className="hidden md:block text-neutral-400">
             Social media validation business model <br /> canvas graphical user
             interface launch <br /> party creative facebook iPad twitter.
           </p>
           <p className="text-neutral-400">All rights reserved.</p>
         </div>
-        <div className="grid grid-cols-3 gap-40">
+        <div className="flex flex-col text-center justify-start md:justify-center md:items-center md:grid md:grid-cols-3 gap-10 md:h-full">
           <div className="flex flex-col gap-10">
             <h2 style={{ color: "#000000" }} className="font-bold text-xl">
               Landings

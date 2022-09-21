@@ -15,6 +15,7 @@ import aboutImg4 from "../images/Image (4).png";
 import aboutImg5 from "../images/Image (5).png";
 import aboutImg6 from "../images/Image (6).png";
 import logoBlack from "../images/Logo-black.png";
+import smCircle from "../images/Ellipse 9 (1).png";
 
 const About = () => {
   useEffect(() => {
@@ -25,13 +26,13 @@ const About = () => {
     <main className="flex flex-col overflow-x-hidden">
       <section
         style={{ background: "#0A2640", height: "450px" }}
-        className="px-20 gap-4 flex flex-col items-center mx-auto relative"
+        className="px-20 gap-4 flex flex-col items-center mx-auto"
       >
-        <p className="text-white text-xl">About</p>
-        <h2 className="font-manrope font-medium text-5xl text-center mt-6 text-white">
+        <p className="text-white text-xl z-20">About</p>
+        <h2 className="font-manrope font-medium text-5xl text-center mt-6 text-white z-20">
           We love to make great <br /> things, things that matter.
         </h2>
-        <p className="hidden md:block text-center text-white mt-4">
+        <p className="hidden md:block text-center text-white mt-4 z-20">
           Funding handshake buyer business-to-business metrics iPad partnership.
           First mover advantage <br /> innovator success deployment
           non-disclosure.
@@ -237,13 +238,17 @@ const About = () => {
         </div>
       </section>
 
-      <section className="hidden px-20 w-full gap-4 lg:flex flex-col items-center mt-28 mx-auto">
+      <section
+        className="hidden px-20 w-full gap-4 lg:flex flex-col items-center mt-28 mx-auto"
+        id="newsletter"
+      >
         <div
           style={{ backgroundColor: "#0A2640" }}
-          className="w-full h-80 rounded-xl"
+          className="w-full h-80 rounded-xl relative"
         >
-          <div className="flex flex-col items-center justify-center py-16 gap-14">
-            <h1 className="text-5xl text-white font-manrope">
+          <img className="absolute top-0 right-0 -z-0" src={smCircle} alt="" />
+          <div className="flex flex-col items-center justify-center py-16 gap-14 z-10">
+            <h1 className="text-5xl text-white font-manrope z-10">
               An enterprise template to ramp <br /> up your company website
             </h1>
             <div className="flex items-center gap-8">
@@ -254,7 +259,7 @@ const About = () => {
                 name=""
                 id=""
               />
-              <button className="inline-block px-6 py-2 bg-emerald-300 text-slate-800 font-bold leading-tight rounded-full hover:bg-transparent hover:border-2 hover:border-emerald-300 hover:text-emerald-300 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-52 h-14">
+              <button className="inline-block px-6 py-2 bg-emerald-300 text-slate-800 font-bold leading-tight rounded-full hover:bg-transparent hover:border-2 hover:border-emerald-300 hover:text-emerald-300 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-52 h-14 z-10">
                 Start now
               </button>
             </div>

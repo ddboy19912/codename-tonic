@@ -14,7 +14,7 @@ const Navbar = () => {
           <img className="w-24 cursor-pointer" src={logo} alt="" />
         </NavLink>
       </div>
-      <div className=" hidden md:flex justify-end items-center gap-5 w-full">
+      <div className=" hidden md:flex justify-end items-center gap-5 w-full z-40">
         <ul className="flex gap-7 text-white">
           <li className="cursor-pointer">
             {" "}

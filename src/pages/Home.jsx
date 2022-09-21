@@ -28,6 +28,8 @@ import imageCombine2 from "../images/Group 281.png";
 import logoBlack from "../images/Logo-black.png";
 import caretDown from "../images/Ellips-down.png";
 import tickIcon from "../images/tickImg.png";
+import circle from "../images/Ellipse 9.png";
+import smCircle from "../images/Ellipse 9 (1).png";
 
 const Home = () => {
   // Hooks
@@ -42,9 +44,10 @@ const Home = () => {
     <main className="flex flex-col overflow-x-hidden">
       <section
         style={{ background: "#0A2640" }}
-        className="px-20 h-screen gap-8 flex flex-col relative"
+        className="px-20 h-screen gap-8 flex flex-col"
       >
-        <div className="flex mt-8 justify-between gap-10">
+        <img className="absolute top-0 right-0 -z-0" src={circle} alt="" />
+        <div className="flex mt-8 justify-between gap-10 z-30">
           <div className="flex flex-col gap-5 justify-center">
             <h2 className="text-white text-5xl text-center md:text-left leading-tight font-manrope">
               Save time by building <br /> fast with Boldo Template
@@ -92,7 +95,7 @@ const Home = () => {
             />
           </div>
         </div>
-        <div className="flex items-center justify-items-stretch ml-5 gap-2 mt-16 scale-125 md:scale-100">
+        <div className="flex items-center justify-items-stretch ml-5 gap-2 mt-16 scale-125 md:scale-100 z-30">
           <div>
             <img className="w-4/6" src={logoWhite} alt="" />
           </div>
@@ -518,10 +521,11 @@ const Home = () => {
       >
         <div
           style={{ backgroundColor: "#0A2640" }}
-          className="w-full h-80 rounded-xl"
+          className="w-full h-80 rounded-xl relative"
         >
-          <div className="flex flex-col items-center justify-center py-16 gap-14">
-            <h1 className="text-5xl text-white font-manrope">
+          <img className="absolute top-0 right-0 -z-0" src={smCircle} alt="" />
+          <div className="flex flex-col items-center justify-center py-16 gap-14 z-10">
+            <h1 className="text-5xl text-white font-manrope z-10">
               An enterprise template to ramp <br /> up your company website
             </h1>
             <div className="flex items-center gap-8">
@@ -532,7 +536,7 @@ const Home = () => {
                 name=""
                 id=""
               />
-              <button className="inline-block px-6 py-2 bg-emerald-300 text-slate-800 font-bold leading-tight rounded-full hover:bg-transparent hover:border-2 hover:border-emerald-300 hover:text-emerald-300 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-52 h-14">
+              <button className="inline-block px-6 py-2 bg-emerald-300 text-slate-800 font-bold leading-tight rounded-full hover:bg-transparent hover:border-2 hover:border-emerald-300 hover:text-emerald-300 focus:outline-none focus:ring-0 transition duration-150 ease-in-out w-52 h-14 z-10">
                 Start now
               </button>
             </div>

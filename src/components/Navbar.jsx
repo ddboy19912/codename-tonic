@@ -16,11 +16,11 @@ const Navbar = () => {
       </div>
       <div className=" hidden md:flex justify-end items-center gap-5 w-full">
         <ul className="flex gap-7 text-white">
-          <li>
+          <li className="cursor-pointer">
             {" "}
             <NavLink to="">Product</NavLink>
           </li>
-          <li>
+          <li className="cursor-pointer">
             <Link
               to="services"
               spy={true}
@@ -31,7 +31,7 @@ const Navbar = () => {
               Services
             </Link>
           </li>
-          <li>
+          <li className="cursor-pointer">
             <NavLink to="/about">About</NavLink>
           </li>
         </ul>
